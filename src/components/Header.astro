@@ -1,0 +1,24 @@
+---
+import * as stylex from "@stylexjs/stylex";
+import { headerStyle } from "../Header.style";
+import NavLink from "./NavLink.astro";
+---
+
+<!-- Header Component -->
+<header {...stylex.props(headerStyle.container)}>
+	<!-- Nav Bar -->
+	<nav>
+		<ul>
+			<NavLink url="/">Home</NavLink>
+			<NavLink url="/notes">Notes</NavLink>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	nav ul {
+		display: flex;
+		list-style: none;
+		gap: 1rem;
+	}
+</style>

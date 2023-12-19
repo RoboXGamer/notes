@@ -1,0 +1,18 @@
+---
+import * as stylex from "@stylexjs/stylex";
+import { headerStyle } from "../Header.style";
+
+let currentPath = Astro.url.pathname;
+let { url } = Astro.props;
+---
+
+<li
+	{...stylex.props(
+		headerStyle.link,
+		currentPath === url ? headerStyle.active : null
+	)}
+>
+	<a href={url}>
+		<slot />
+	</a>
+</li>
